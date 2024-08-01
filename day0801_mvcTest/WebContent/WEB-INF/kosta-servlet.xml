@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 핸들러 컨트롤러 객체를 생성하는 문장 -->
+	<bean id="helloController" class="com.kosta.controller.HelloController"/>
+	
+	<!-- 핸들러 매핑 (simple url handler mapping)-->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<!-- name에 mapping 정보를 저장  -->
+		<property name="mappings">
+			<props>
+				<prop key="/hello.do">helloController</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
